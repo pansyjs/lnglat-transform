@@ -72,5 +72,8 @@
     "*.{ts,tsx}": [
       "eslint --cache --fix"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
