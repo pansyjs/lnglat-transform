@@ -1,0 +1,69 @@
+{
+  "name": "@pansy/lnglat-transform",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "pnpm@8.15.4",
+  "description": "支持各坐标系之间的转换",
+  "author": "wangxingkang <https://github.com/wangxingkang>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pansyjs/lnglat-transform.git"
+  },
+  "keywords": [
+    "lnglat-transform",
+    "WGS-84",
+    "GCJ-02",
+    "BD-09"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "bootstrap": "pnpm install",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "tsup",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "preinstall": "npx only-allow pnpm",
+    "reinstall": "rimraf pnpm-lock.yaml && rimraf package.lock.json && rimraf node_modules && npm run bootstrap",
+    "prepare": "husky || true"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.21.1",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "coordtransform": "^2.1.2",
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "lnglat-transform": "^1.0.1",
+    "rimraf": "^5.0.7",
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --cache --fix"
+    ]
+  }
+}
