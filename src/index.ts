@@ -5,7 +5,7 @@ import { transformLat, transformLng } from './utils'
  * 百度坐标系转火星坐标系(BD-09 > GCJ-02)
  * @param bd_lng 经度
  * @param bd_lat 纬度
- * @returns
+ * @returns 转换后的经纬度坐标
  */
 export function bd09ToGcj02(bd_lng: number, bd_lat: number) {
   const x = bd_lng - 0.0065
@@ -13,17 +13,17 @@ export function bd09ToGcj02(bd_lng: number, bd_lat: number) {
   const z = Math.sqrt(x * x + y * y) - 0.00002 * Math.sin(y * x_PI)
   const theta = Math.atan2(y, x) - 0.000003 * Math.cos(x * x_PI)
 
-  const gg_lng = z * Math.cos(theta)
-  const gg_lat = z * Math.sin(theta)
+  const gcj_lng = z * Math.cos(theta)
+  const gcj_lat = z * Math.sin(theta)
 
-  return [gg_lng, gg_lat]
+  return [gcj_lng, gcj_lat]
 }
 
 /**
  * 火星坐标系转百度坐标系(GCJ-02 > BD-09)
- * @param bd_lng 经度
- * @param bd_lat 纬度
- * @returns
+ * @param gcj_lng 经度
+ * @param gcj_lat 纬度
+ * @returns 转换后的经纬度坐标
  */
 export function gcj02ToBd09(gcj_lng: number, gcj_lat: number) {
   const z = Math.sqrt(gcj_lng * gcj_lng + gcj_lat * gcj_lat) + 0.00002 * Math.sin(gcj_lat * x_PI)
@@ -37,9 +37,9 @@ export function gcj02ToBd09(gcj_lng: number, gcj_lat: number) {
 
 /**
  * 火星坐标系转标准坐标系(GCJ-02 > WGS-84)
- * @param bd_lng 经度
- * @param bd_lat 纬度
- * @returns
+ * @param gcj_lng 经度
+ * @param gcj_lat 纬度
+ * @returns 转换后的经纬度坐标
  */
 export function gcj02ToWgs84(gcj_lng: number, gcj_lat: number) {
   let dlat = transformLat(gcj_lng - 105.0, gcj_lat - 35.0)
@@ -62,7 +62,7 @@ export function gcj02ToWgs84(gcj_lng: number, gcj_lat: number) {
  * 标准坐标系转火星坐标系(WGS-84 > GCJ-02)
  * @param wgs_lng 经度
  * @param wgs_lat 纬度
- * @returns
+ * @returns 转换后的经纬度坐标
  */
 export function wgs84ToGcj02(wgs_lng: number, wgs_lat: number) {
   let dlat = transformLat(wgs_lng - 105.0, wgs_lat - 35.0)
@@ -86,7 +86,7 @@ export function wgs84ToGcj02(wgs_lng: number, wgs_lat: number) {
  * 标准坐标系转百度坐标系(WGS-84 > BD-09)
  * @param wgs_lng 经度
  * @param wgs_lat 纬度
- * @returns
+ * @returns 转换后的经纬度坐标
  */
 export function wgs84ToBd09(wgs_lng: number, wgs_lat: number) {
   // 第一次转换
@@ -112,9 +112,9 @@ export function wgs84ToBd09(wgs_lng: number, wgs_lat: number) {
 
 /**
  * 百度坐标系转标准坐标系(BD-09 > WGS-84)
- * @param wgs_lng 经度
- * @param wgs_lat 纬度
- * @returns
+ * @param bd_lng 经度
+ * @param bd_lat 纬度
+ * @returns 转换后的经纬度坐标
  */
 export function bd09ToWgs84(bd_lng: number, bd_lat: number) {
   const s_gcj = bd09ToGcj02(bd_lng, bd_lat)
