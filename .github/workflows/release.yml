@@ -44,6 +44,9 @@ jobs:
         run: pnpm install
         shell: bash
 
+      - name: Build
+        run: pnpm build
+
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

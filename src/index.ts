@@ -23,7 +23,7 @@ export function bd09ToGcj02(bd_lng: number, bd_lat: number) {
  * 火星坐标系转百度坐标系(GCJ-02 > BD-09)
  * @param gcj_lng 经度
  * @param gcj_lat 纬度
- * @returns 转换后的经纬度坐标
+ * @returns 转换后的经纬度坐标(BD-09)
  */
 export function gcj02ToBd09(gcj_lng: number, gcj_lat: number) {
   const z = Math.sqrt(gcj_lng * gcj_lng + gcj_lat * gcj_lat) + 0.00002 * Math.sin(gcj_lat * x_PI)
