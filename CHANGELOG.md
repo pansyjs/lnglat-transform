@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/pansyjs/lnglat-transform/compare/v1.0.1...v1.0.2) (2024-06-18)
+
+
+### Bug Fixes
+
+* 修复未编译导致发包的问题 ([6db39e4](https://github.com/pansyjs/lnglat-transform/commit/6db39e46b26aa2355a657f6d8e5c92cf5690235e))
+
 ## [1.0.1](https://github.com/pansyjs/lnglat-transform/compare/v1.0.0...v1.0.1) (2024-06-18)
 
 
