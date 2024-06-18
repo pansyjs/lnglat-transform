@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/pansyjs/lnglat-transform/compare/v1.0.2...v1.0.3) (2024-06-18)
+
+
+### Bug Fixes
+
+* 替换为 vite 编译 ([aef8def](https://github.com/pansyjs/lnglat-transform/commit/aef8defc36e0f1694235df9abfb9458368550c86))
+
 ## [1.0.2](https://github.com/pansyjs/lnglat-transform/compare/v1.0.1...v1.0.2) (2024-06-18)
 
 
