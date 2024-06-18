@@ -26,11 +26,11 @@
       },
       "require": {
         "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "default": "./dist/index.cjs"
       }
     }
   },
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
@@ -41,7 +41,7 @@
     "bootstrap": "pnpm install",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "build": "tsup",
+    "build": "vite build",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "preinstall": "npx only-allow pnpm",
@@ -67,6 +67,8 @@
     "semantic-release": "^24.0.0",
     "tsup": "^8.1.0",
     "typescript": "^5.4.5",
+    "vite": "^5.3.1",
+    "vite-plugin-dts": "^3.9.1",
     "vitest": "^1.6.0"
   },
   "lint-staged": {
