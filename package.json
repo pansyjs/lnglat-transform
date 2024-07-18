@@ -2,7 +2,7 @@
   "name": "@pansy/lnglat-transform",
   "type": "module",
   "version": "1.0.3",
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@8.15.9",
   "description": "地图坐标系之间互相转换",
   "author": "wangxingkang <https://github.com/wangxingkang>",
   "license": "MIT",
